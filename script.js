@@ -8,17 +8,32 @@ let obj2={
     age:5,
     name:"person1"
 }
-let str1 = JSON.stringify(obj1,Object.keys(obj1).sort());
-let str2 = JSON.stringify(obj2,Object.keys(obj2).sort());
+let str1 = JSON.stringify(obj1);
+let str2 = JSON.stringify(obj2);
 console.log(str1);
 console.log(str2);
 
-if(str1===str2){
-    console.log("The JSON objects are equal");
-}
-else{
-    console.log("The JSON objects are not equal");
-}
+function compareJSON(obj1, obj2) { 
+    
+    if (Object.keys(obj1).length !== Object.keys(obj2).length) { 
+      return false; 
+    } 
+   
+    for (let key in obj1) { 
+      
+      if (obj1.hasOwnProperty(key) && obj2.hasOwnProperty(key)) { 
+        if (obj1[key] !== obj2[key]) { 
+          return false; 
+        } 
+      } else { 
+        return false; 
+      } 
+    } 
+   
+    return true; 
+  } 
+  console.log(compareJSON(obj1, obj2));
+
 
 
 //2nd task display all country flags
@@ -35,6 +50,7 @@ request.onload=function(){
         console.log("Flags:"+result[i].flags.png);
     }
 }
+
 
 
 //3rd task display all country names, region, sub-region, population
