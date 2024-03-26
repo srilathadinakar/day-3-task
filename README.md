@@ -1,3 +1,3 @@
-Day 3 task
-Compare JSON Properties
-Using XMLHttpRequest display country name, region, sub-region,population,flags 
+1. Compare JSON Properties
+2. Using XMLHttpRequest display country flags
+3. Using XMLHttpRequest display country name, region, sub-region,population 
